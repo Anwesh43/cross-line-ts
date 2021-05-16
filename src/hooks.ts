@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 const scGap : number = 0.02 
 const delay : number = 20 
 
-const useAnimatedScale = () => {
+export const useAnimatedScale = () => {
     const [scale, setScale] = useState(0)
     const [animated, setAnimated] = useState(false)
     return {
@@ -23,5 +23,23 @@ const useAnimatedScale = () => {
                 }, delay)
             }
         }
+    }
+}
+
+export const useDimesnion = () => {
+    const [w, setW] = useState(window.innerWidth)
+    const [h, setH] = useState(window.innerHeight)
+    useEffect(() => {
+        window.onresize = () => {
+            setW(window.innerWidth)
+            setH(window.innerHeight)
+        }
+        return () => {
+            
+        }
+    })
+    return {
+        w,
+        h, 
     }
 }
