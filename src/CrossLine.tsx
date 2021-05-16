@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStyle } from './hooks'
-
+import withContext from './withContext'
 interface CrossLineProps {
     w : number, 
     h : number, 
@@ -20,4 +20,4 @@ const CrossLine : React.FC<CrossLineProps> = (props : CrossLineProps) => {
     )
 }
 
-export default CrossLine 
+export default withContext(CrossLine)

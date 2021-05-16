@@ -26,7 +26,7 @@ export const useAnimatedScale = () => {
     }
 }
 
-export const useDimesnion = () => {
+export const useDimension = () => {
     const [w, setW] = useState(window.innerWidth)
     const [h, setH] = useState(window.innerHeight)
     useEffect(() => {
