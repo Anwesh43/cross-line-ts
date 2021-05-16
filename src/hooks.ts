@@ -67,7 +67,7 @@ export const useStyle = (w : number, h : number, scale : number) => {
                 background 
             }
         },
-        buttonStyle() {
+        buttonStyle() : CSSProperties {
             const left = `${w * 0.35}px`
             const top = `${h * 0.8}px`
             return {
