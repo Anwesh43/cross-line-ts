@@ -12,7 +12,7 @@ const CrossLine : React.FC<CrossLineProps> = (props : CrossLineProps) => {
     const {crossStyle, buttonStyle} = useStyle(props.w, props.h, props.scale)
     return (
         <div>
-            <button style = {buttonStyle()}>
+            <button style = {buttonStyle()} onClick = {() => props.onClick()}>
                 Cross me
             </button>
             {[0, 1].map((i : number) => (<div style = {crossStyle(i)}></div>))}

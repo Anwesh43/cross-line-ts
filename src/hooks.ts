@@ -13,7 +13,7 @@ export const useAnimatedScale = () => {
                 setAnimated(true)
                 const interval = setInterval(() => {
                     setScale((prev : number) => {
-                        if (scale > 1) {
+                        if (prev > 1) {
                             setAnimated(false)
                             clearInterval(interval)
                             return 0 
@@ -51,9 +51,10 @@ export const useStyle = (w : number, h : number, scale : number) => {
     const size = Math.min(w, h) / 10 
     return {
         crossStyle(i : number) : CSSProperties {
-            const top = `${y}px`
-            const left = `${x}px`
-            const height = `${size * scale}px`
+            const ah : number = size * Math.sin(scale * Math.PI)
+            const top = `${y - ah / 2}px`
+            const left = `${x - Math.min(w, h) / 180}px`
+            const height = `${ah}px`
             const width = `${Math.min(w, h) / 90}px`
             const transform = `rotate(${90 * i + 45}deg)`
             const background = 'indigo'
